@@ -1,5 +1,13 @@
 print("=== cadastro ===")
 username = input("Digite seu nome de usuário: ")
+while True:
+    username = input("Digite seu nome de usuário: ")
+
+    if username.strip() == "":
+        print("O nome de usuário não pode estar vazio")
+    else:
+        break
+    
 def senha_correta(user_password):
         number = any(char.isdigit() for char in user_password)
         upper = any(char.isupper() for char in user_password)
