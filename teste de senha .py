@@ -1,6 +1,29 @@
 print("=== cadastro ===")
 username = input("Digite seu nome de usuário: ")
-user_password = (input("digite sua senha de usuario:"))
+def senha_correta(user_password):
+        number = any(char.isdigit() for char in user_password)
+        upper = any(char.isupper() for char in user_password)
+        especial_char = any(not char.isalnum() for char in user_password)
+
+        if len(user_password) <8:
+             print("A senha precisa de no minimo 8 caracteres")
+             return False
+        if not number:
+             print("Precisa pelo menos ter um número")
+        if not upper:
+             print("Precisa pelo menos ter uma letra Maiúscula")
+        if not especial_char:
+             print("Precisa pelo menos ter um caractere especial")
+
+        if number and upper and especial_char:
+             return True
+        else:
+             return False
+while True:
+    user_password = (input("digite sua senha de usuario:"))
+    if senha_correta(user_password):
+        print("conta criada com sucesso")
+        break
 
 max_trys = 3
 
